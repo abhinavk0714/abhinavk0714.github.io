@@ -1,103 +1,392 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>CSCE 190: Abhinav Krishniah</title>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <h1>Abhinav Krishniah's CSCE 190 Site</h1>
+<html lang="en">
 
-        <div class="assignments">
-            <!-- Problem Statement Assignment-->
-            <section class="assignment">
-                <a href="files/problem-statement.pdf">
-                    <h2>Problem Statement: Reptile Feeder</h2>
-                </a>
-                <a href="files/problem-statement.pdf">
-                    <img src="images/problem-statement.png">
-                </a>
-                 <p>
-                    Many reptile owners in the pet industry receive inaccurate and misleading information in regards to their pet reptile’s nutritional needs.  Our solution should be something  that contains a comprehensive list of feeder insects/animals, and their nutritional profiles to greatly reduce the confusion, and filter out the misinformation.
-                </p>
-            </section>
+<head>
+    <script>
+        // Get this script to run immediately
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            document.documentElement.style.display = 'none';
+            window.addEventListener('DOMContentLoaded', () => {
+                document.body.classList.add('light-theme');
+                document.documentElement.style.display = '';
+            });
+        }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhinav Krishniah - Personal Website</title>
+    <meta name="description"
+        content="Abhinav Krishniah - B.S. in Computer Science, Minor in Mathematics at the University of South Carolina">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+</head>
 
-            <!-- Affinity Diagram Assignment-->
-            <section class="assignment">
-                <a href="files/affinity-diagram.pdf">
-                    <h2>Affinity Diagram: Reptile Feeder</h2>
-                </a>
-                <a href="files/affinity-diagram.pdf">
-                    <img src="images/affinity-diagram.png">
-                </a>
-                <p>
-                    My group and I worked together to brainstorm everthing we could potentially add to our reptile feeder app.
-                </p>
-            </section>
+<body class="theme-bg">
+    <canvas id="particles-background"></canvas>
+    <!-- Progress bar -->
+    <!-- <div class="scroll-progress fixed top-0 left-0 h-1 z-50"></div> -->
 
-            <!-- Personna Assignment-->
-            <section class="assignment">
-                <a href="files/personna.pdf">
-                <h2>Personna: 5 Personnas for Reptile Feeder</h2>
-                </a>
-                <a href="files/personna.pdf">
-                    <img src="images/personna.png">
-                </a>
-                <p>
-                    5 personnas of people that want to feed their reptiles properly and need assistance.
-                </p>
-            </section>
+    <!-- Mobile menu overlay -->
+    <div class="mobile-overlay fixed inset-0 backdrop-blur hidden z-40 theme-bg"></div>
 
-            <!-- Storyboard Assignment-->
-            <section class="assignment">
-                <a href="files/storyboard.pdf">
-                    <h2>Storyboard: Reptile Feeder</h2>
-                </a>
-                <a href="files/storyboard.pdf">
-                    <img src="images/storyboard.png">
-                </a>
-                <p>
-                    With the personnas created, our group also created 5 stories that could be scenarios where our app is used.
-                </p>
-            </section>
+    <div class="min-h-screen">
+        <div class="mx-auto max-w-screen-xl px-6 py-12 md:px-12 md:py-20 lg:px-24 lg:py-0">
+            <div class="lg:flex lg:justify-between lg:gap-4">
+                <!-- Left sidebar -->
+                <header
+                    class="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
+                    <div class="header-overlay rounded-lg p-4">
+                        <h1 class="text-4xl font-bold tracking-tight sm:text-5xl theme-text">
+                            Abhinav Krishniah
+                        </h1>
+                        <div class="flex items-center space-x-4">
+                            <h2 class="mt-3 text-lg font-medium tracking-tight sm:text-xl theme-text">
+                                B.S. in Computer Science
+                            </h2>
+                            <div class="mt-3 paper-venue-tag award-tag">Aug 2022 - May 2026</div>
+                        </div>
 
-            <!-- Sketches Assignment-->
-            <section class="assignment">
-                <a href="files/sketches.pdf">
-                    <h2>Sketches: Reptile Feeder</h2>
-                </a>
-                <a href="files/sketches.pdf">
-                    <img src="images/sketches.png">
-                </a>
-                <p>
-                    Rough ideas of how the application may look.
-                </p>
-            </section>
 
-            <!-- Paper Prototype Assignment-->
-            <section class="assignment">
-                <a href="https://www.youtube.com/watch?v=VTLx-ZzdwPI">
-                    <h2>Paper Prototype: Reptile Feeder</h2>
-                </a>
-                <a href="https://www.youtube.com/watch?v=VTLx-ZzdwPI">
-                    <img src="images/paper-prototype.png">
-                </a>
-                <p>
-                    This video shows a rough paper walkthrough of every screen in our reptile feeder application.
-                </p>
-            </section>
+                        <div class="flex items-center space-x-4 mt-4">
+                            <div class="hiring-tag">
+                                Looking for New Grad Opportunities - 2026
+                            </div>
+                        </div>
 
-            <!-- Hi-Fi-Prototype Assignment-->
-            <section class="assignment">
-                <a href="files/hi-fi-prototype/src/index.html">
-                    <h2>Hi-Fi-Prototype: Reptile Feeder</h2>
-                </a>
-                <a href="files/hi-fi-prototype/src/index.html">
-                    <img src="images/hi-fi-prototype.png">
-                </a>
-                <p>
-                    High fidelity prototype of our reptile feeder application.
-                </p>
-            </section>
+                        <p class="mt-4 max-w-xs leading-normal theme-text-secondary">
+                            Interested in Software Engineering, Machine Learning, and Artificial Intelligence.
+                        </p>
+
+                        <nav class="nav hidden lg:block">
+                            <ul class="mt-16 w-max">
+                                <li>
+                                    <a class="group flex items-center py-3" href="#about">
+                                        <span class="nav-text text-xs font-bold uppercase tracking-widest">About</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="group flex items-center py-3" href="./projects.html">
+                                        <span
+                                            class="nav-text text-xs font-bold uppercase tracking-widest">Projects</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="group flex items-center py-3" href="#experience">
+                                        <span
+                                            class="nav-text text-xs font-bold uppercase tracking-widest">Experience</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <ul class="ml-1 mt-8 flex items-center" aria-label="Social media">
+                        <li class="mr-5 text-xs">
+                            <a class="block social-link" href="https://github.com/abhinavk0714" target="_blank"
+                                rel="noreferrer">
+                                <span class="sr-only">GitHub</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                                    class="h-6 w-6">
+                                    <path
+                                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
+                                    </path>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="mr-5 text-xs">
+                            <a class="block social-link" href="https://www.linkedin.com/in/abhinavkrishniah/"
+                                target="_blank" rel="noreferrer">
+                                <span class="sr-only">LinkedIn</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                    class="h-6 w-6">
+                                    <path
+                                        d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z">
+                                    </path>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="mr-5 text-xs">
+                            <a class="block social-link" href="mailto:abhinavkrish213@gmail.com">
+                                <span class="sr-only">Email</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" class="h-6 w-6">
+                                    <path
+                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                                    </path>
+                                </svg>
+                            </a>
+                        <li>
+                            <a href="./assets/Abhinav_Krishniah_Resume.pdf" class="block social-link" target="_blank"
+                                rel="noreferrer">
+                                <span class="sr-only">Resume</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" class="h-6 w-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </header>
+
+                <!-- Main content -->
+                <main class="pt-24 lg:w-1/2 lg:py-24">
+                    <!-- About Section -->
+                    <section id="about" class="section mb-16 scroll-mt-16 md:mb-24 lg:mb-36">
+                        <div
+                            class="sticky top-0 z-20 -mx-6 mb-4 w-screen px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 theme-bg">
+                            <h2 class="text-sm font-bold uppercase tracking-widest theme-text">About Me</h2>
+                        </div>
+
+                        <div class="about-card">
+                            <div class="card-content relative">
+                                <p class="mb-4 leading-relaxed">
+                                    I'm a student and developer who likes <span class="highlight">building things and learning by doing</span>.
+                                    This site is where I keep my projects and experience, from class work to side projects and anything in between.
+                                </p>
+
+                                <a href="assets/Abhinav_Krishniah_Resume.pdf" target="_blank" rel="noopener noreferrer"
+                                    style="position: relative; z-index: 30;"
+                                    onclick="window.open('assets/Abhinav_Krishniah_Resume.pdf', '_blank')"
+                                    class="inline-flex items-center gap-2 text-sm font-medium mb-4 view-all-button hover:cursor-pointer">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" class="h-5 w-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                    </svg>
+                                    Resume
+                                </a>
+
+                                <p class="mb-4">What I'm into:</p>
+                                <div class="flex flex-wrap gap-2 mb-6">
+                                    <span class="skill-tag">Machine Learning</span>
+                                    <span class="skill-tag">AI</span>
+                                    <span class="skill-tag">Python</span>
+                                    <span class="skill-tag">Data</span>
+                                    <span class="skill-tag">Full-stack</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Projects Section -->
+                    <section id="projects" class="section mb-16 scroll-mt-16 md:mb-24 lg:mb-36">
+                        <div
+                            class="sticky top-0 z-20 -mx-6 mb-4 w-screen px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 theme-bg">
+                            <h2 class="section-heading">Featured Projects</h2>
+                        </div>
+
+                        <!-- Featured Project 1: Code Canvas -->
+                        <div
+                            class="group relative grid gap-4 pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100">
+                            <div
+                                class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition lg:-inset-x-6 lg:block lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg theme-surface">
+                            </div>
+                            <header
+                                class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide sm:col-span-2 theme-text-secondary">
+                                June 2025 – Aug 2025</header>
+                            <div class="z-10 sm:col-span-6">
+                                <h3 class="font-medium leading-snug theme-text">
+                                    <a href="https://github.com/abhinavk0714/code-canvas" target="_blank" rel="noopener noreferrer" class="hover:underline">
+                                        Code Canvas
+                                    </a>
+                                </h3>
+                                <p class="mt-2 text-sm leading-normal theme-text-secondary">
+                                    A real-time collaborative coding platform with integrated whiteboard functionality. Multi-language support (Python, Java, C++), live cursors and sync, syntax highlighting, and Supabase auth. Built with Next.js, Node.js, Socket.IO, and Supabase (PostgreSQL).
+                                </p>
+                                <ul class="mt-2 flex flex-wrap">
+                                    <li class="mr-1.5 mt-2">
+                                        <div class="skill-tag">Next.js</div>
+                                    </li>
+                                    <li class="mr-1.5 mt-2">
+                                        <div class="skill-tag">TypeScript</div>
+                                    </li>
+                                    <li class="mr-1.5 mt-2">
+                                        <div class="skill-tag">Socket.IO</div>
+                                    </li>
+                                    <li class="mr-1.5 mt-2">
+                                        <div class="skill-tag">Supabase</div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Featured Project 2: Legendary Pokemon Classifier -->
+                        <div
+                            class="group relative grid gap-4 pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 mt-12">
+                            <div
+                                class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition lg:-inset-x-6 lg:block lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg theme-surface">
+                            </div>
+                            <header
+                                class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide sm:col-span-2 theme-text-secondary">
+                                Jan 2025 – Feb 2025</header>
+                            <div class="z-10 sm:col-span-6">
+                                <h3 class="font-medium leading-snug theme-text">
+                                    <a href="https://github.com/abhinavk0714/legendary-pokemon-classifier" target="_blank" rel="noopener noreferrer" class="hover:underline">
+                                        Legendary Pokemon Classifier
+                                    </a>
+                                </h3>
+                                <p class="mt-2 text-sm leading-normal theme-text-secondary">
+                                    End-to-end ML pipeline using a Kaggle Pokédex dataset to predict whether a Pokémon is legendary. Preprocessing with SMOTE and ColumnTransformer for class balancing; trained ensemble models (RandomForest, AdaBoost, GradientBoosting), achieving 97% F1-score on test data.
+                                </p>
+                                <ul class="mt-2 flex flex-wrap">
+                                    <li class="mr-1.5 mt-2">
+                                        <div class="skill-tag">Python</div>
+                                    </li>
+                                    <li class="mr-1.5 mt-2">
+                                        <div class="skill-tag">scikit-learn</div>
+                                    </li>
+                                    <li class="mr-1.5 mt-2">
+                                        <div class="skill-tag">Machine Learning</div>
+                                    </li>
+                                    <li class="mr-1.5 mt-2">
+                                        <div class="skill-tag">pandas</div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="mt-8">
+                            <a href="./projects.html" class="view-all-button">
+                                View All Projects
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                        </div>
+                    </section>
+
+                    <!-- Experience Section -->
+                    <section id="experience" class="section mb-16 scroll-mt-16 md:mb-24 lg:mb-36">
+                        <div
+                            class="sticky top-0 z-20 -mx-6 mb-4 w-screen px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 theme-bg">
+                            <h2 class="section-heading">Experience</h2>
+                        </div>
+
+                        <div class="space-y-12">
+                            <!-- Experience Item 1 -->
+                            <div
+                                class="group relative grid gap-4 pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100">
+                                <div
+                                    class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition lg:-inset-x-6 lg:block lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg theme-surface">
+                                </div>
+                                <header
+                                    class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide sm:col-span-2 theme-text-secondary">
+                                    Aug 2025 – Present
+                                </header>
+                                <div class="z-10 sm:col-span-6">
+                                    <h3 class="font-medium leading-snug">
+                                        <div class="theme-text">Software Engineering Capstone Project</div>
+                                        <div class="theme-text-secondary">University of South Carolina · Columbia, SC</div>
+                                    </h3>
+                                    <p class="mt-2 text-sm leading-normal theme-text-secondary">
+                                        Leading a 5-member team to design and build a full-stack health-tracking web app using Next.js, Node.js (Express), TypeScript, and Supabase, following Agile principles. Developed a scalable backend with PostgreSQL and Supabase Auth; implemented CI/CD on Vercel, increasing development efficiency by 25%.
+                                    </p>
+                                    <ul class="mt-2 flex flex-wrap">
+                                        <li class="mr-1.5 mt-2">
+                                            <div class="skill-tag">Next.js</div>
+                                        </li>
+                                        <li class="mr-1.5 mt-2">
+                                            <div class="skill-tag">TypeScript</div>
+                                        </li>
+                                        <li class="mr-1.5 mt-2">
+                                            <div class="skill-tag">PostgreSQL</div>
+                                        </li>
+                                        <li class="mr-1.5 mt-2">
+                                            <div class="skill-tag">CI/CD</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Experience Item 2 -->
+                            <div
+                                class="group relative grid gap-4 pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100">
+                                <div
+                                    class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition lg:-inset-x-6 lg:block lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg theme-surface">
+                                </div>
+                                <header
+                                    class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide sm:col-span-2 theme-text-secondary">
+                                    Aug 2025 – Present
+                                </header>
+                                <div class="z-10 sm:col-span-6">
+                                    <h3 class="font-medium leading-snug">
+                                        <div class="theme-text">Supplemental Instruction Leader</div>
+                                        <div class="theme-text-secondary">University of South Carolina · Columbia, SC</div>
+                                    </h3>
+                                    <p class="mt-2 text-sm leading-normal theme-text-secondary">
+                                        Leading 3 weekly review sessions for 160+ students, designing Java-based problem sets on data structures (linked lists, stacks, queues, heaps) that boosted average exam scores by 20%. Created interactive study materials and coding exercises; collaborated with faculty to align sessions with coursework, reducing withdrawal rates by 10%.
+                                    </p>
+                                    <ul class="mt-2 flex flex-wrap">
+                                        <li class="mr-1.5 mt-2">
+                                            <div class="skill-tag">Java</div>
+                                        </li>
+                                        <li class="mr-1.5 mt-2">
+                                            <div class="skill-tag">Data Structures</div>
+                                        </li>
+                                        <li class="mr-1.5 mt-2">
+                                            <div class="skill-tag">Teaching</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Experience Item 3 -->
+                            <div
+                                class="group relative grid gap-4 pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100">
+                                <div
+                                    class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition lg:-inset-x-6 lg:block lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg theme-surface">
+                                </div>
+                                <header
+                                    class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide sm:col-span-2 theme-text-secondary">
+                                    Jan 2024 – May 2024
+                                </header>
+                                <div class="z-10 sm:col-span-6">
+                                    <h3 class="font-medium leading-snug">
+                                        <div class="theme-text">Software Engineer Intern</div>
+                                        <div class="theme-text-secondary">University of South Carolina · Columbia, SC</div>
+                                    </h3>
+                                    <p class="mt-2 text-sm leading-normal theme-text-secondary">
+                                        Worked with a team of 5 through the full Software Development Lifecycle (SDLC) using SCRUM, achieving 100% on-time delivery of a client-approved product. Designed UML diagrams for system architecture (25% reduction in rework); managed Git, design patterns, and JUnit testing for a 95% test pass rate.
+                                    </p>
+                                    <ul class="mt-2 flex flex-wrap">
+                                        <li class="mr-1.5 mt-2">
+                                            <div class="skill-tag">SCRUM</div>
+                                        </li>
+                                        <li class="mr-1.5 mt-2">
+                                            <div class="skill-tag">UML</div>
+                                        </li>
+                                        <li class="mr-1.5 mt-2">
+                                            <div class="skill-tag">JUnit</div>
+                                        </li>
+                                        <li class="mr-1.5 mt-2">
+                                            <div class="skill-tag">Git</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="mt-8">
+                            <a href="/experience" class="view-all-button">
+                                View Full Experience
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                        </div> -->
+                    </section>
+                </main>
+            </div>
         </div>
-    </body>
-<html>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/particles.js"></script>
+</body>
+
+</html>
